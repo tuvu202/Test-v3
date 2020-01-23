@@ -1,0 +1,42 @@
+#sidebar-wrapper {
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+}
+
+#page-content-wrapper {
+  flex: 2;
+  min-width: 100vw;
+}
+
+#wrapper {
+  &.toggled {
+    .side-bar {
+      position: absolute;
+      z-index: 3;
+    }
+    .content {
+      height: calc(100% - 55px);
+    }
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: 1116px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper {
+    &.toggled {
+      #sidebar-wrapper {
+        margin-left: -15rem;
+      }
+    }
+  }
+}
